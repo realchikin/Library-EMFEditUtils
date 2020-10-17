@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EMF Edit Utils
+Bundle-SymbolicName: tools.mdsd.library.emfeditutils
+Bundle-Version: 0.1.0.qualifier
+Automatic-Module-Name: tools.mdsd.library.emfeditutils
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.eclipse.emf.edit;bundle-version="2.15.0"
+Export-Package: tools.mdsd.library.emfeditutils.itempropertydescriptor

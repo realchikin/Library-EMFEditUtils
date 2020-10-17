@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="tools.mdsd.library.emfeditutils.feature" version="0.1.0.qualifier">
+      <category name="tools.mdsd.library.emfeditutils"/>
+   </feature>
+   <feature id="tools.mdsd.library.emfeditutils.feature.source" version="0.1.0.qualifier">
+      <category name="tools.mdsd.library.emfeditutils.source"/>
+   </feature>
+   <category-def name="tools.mdsd.library.emfeditutils" label="MDSD Tools EMF Edit Utils"/>
+   <category-def name="tools.mdsd.library.emfeditutils.source" label="MDSD Tools EMF Edit Utils Developer Resources"/>
+</site>
