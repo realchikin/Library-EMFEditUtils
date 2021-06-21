@@ -1,5 +1,6 @@
 package tools.mdsd.library.emfeditutils.itempropertydescriptor;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -15,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * @param <R>
  *            The type of values.
  */
-public abstract class ValueChoiceCalculatorBase<T extends EObject, R extends EObject> implements ValueChoiceCalculator {
+public abstract class ValueChoiceCalculatorBase<T extends EObject, R extends Object> implements ValueChoiceCalculator {
 
     private final Class<T> objectType;
     private final Class<R> childType;
@@ -53,6 +54,9 @@ public abstract class ValueChoiceCalculatorBase<T extends EObject, R extends EOb
             .map(objectType::cast);
         if (typedObject.isEmpty()) {
             return originalChoice;
+        }
+        if (originalChoice == null) {
+            originalChoice = new ArrayList<>();
         }
         var typedList = originalChoice.stream()
             .filter(v -> v == null || childType.isInstance(v))
