@@ -62,7 +62,13 @@ public abstract class ValueChoiceCalculatorBase<T extends EObject, R extends Obj
             .filter(v -> v == null || childType.isInstance(v))
             .map(childType::cast)
             .collect(Collectors.toList());
-        return getValueChoiceTyped(typedObject.get(), typedList);
+        var newChoice = getValueChoiceTyped(typedObject.get(), typedList);
+        if (originalChoice.contains(null) && !newChoice.contains(null)) {
+            var newChoiceCopy = new ArrayList<>(newChoice);
+            newChoiceCopy.add(0, null);
+            newChoice = newChoiceCopy;
+        }
+        return newChoice;
     }
 
     /**
